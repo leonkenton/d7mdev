@@ -1,7 +1,7 @@
 This is a Drupal 7 Module development course :
 
 
-Course Overview
+Drupal 7 Module development Course Overview
 
 In this course, you will learn to build your own custom modules for Drupal.Covering the Drupal 7 core API and the Views module API,
 you will discover the most commonly-used Drupal hooks and functions and find out how to use the Drupal  documentation to learn about the rest. 

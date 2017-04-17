@@ -63,3 +63,10 @@ Modifying Contrib Modules and Drupal Core
 
 Best practices for altering Drupal core and contrib module code.
 Creating and applying code patches.
+
+Instructor - Wayne Eaker 
+
+Is the director and chief developer of Zengenuity. 
+He is a Drupal expert with years of experience building highly-customized Drupal websites. 
+He is also a seasoned trainer, having taught professionals, corporate clients and high school,
+computer science students.

@@ -1,0 +1,39 @@
+# Ignore configuration files that may contain sensitive information.
+sites/*/settings*.php
+ 
+# Ignore paths that contain user-generated content.
+/cache
+sites/*/files
+sites/*/private
+             
+# Ignore configuration files that may contain sensitive informa
+sites/*/settings*.php
+sites/default/default.settings.php
+
+                    
+# Ignore various other cruft
+.DS_Store
+.buildpath
+nbproject
+.project
+.settings
+/backup
+/tmp
+/awstats-icon
+/awstatsicons
+/icon
+/stats
+ 
+ 
+# Ignore default text files 
+/robots.txt
+/CHANGELOG.txt
+/COPYRIGHT.txt
+/INSTALL*.txt
+/LICENSE.txt
+/MAINTAINERS.txt
+/UPGRADE.txt
+/README.txt
+sites/all/README.txt 
+sites/all/modules/README.txt
+sites/all/themes/README.txt

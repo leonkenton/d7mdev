@@ -1,0 +1,87 @@
+<?php
+
+/*
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+// This function creates a custom block
+function hello_block_info() {
+  $blocks = array();
+  
+  // Hello Word D7MD Block in Drupal UI blocks screen
+  $blocks['hello_world'] = array(
+    'info' => t('Hello Word D7MD Block'),
+  );
+  
+  // Hello User Block in Drupal UI blocks screen
+  $blocks['hello_user'] = array(
+    'info' => t('Hello User Block'),
+  );
+  
+  // Hello info block in Drupal UI blocks screen
+  $blocks['user_info'] = array(
+    'info' => t('User Info Block'),
+  );
+  
+  // Return $blocks array
+  return $blocks; 
+   
+ }
+
+function hello_block_view($delta = '') {
+  $block = array();
+  
+  switch ($delta) {
+   
+    
+    case 'hello_world':
+      $block['subject'] = t('Hello World!!!');
+      $block['content'] = t('This is the hello world block.');
+      break;
+    
+    case 'hello_user':
+       $block['subject'] = t('Hello World!!!');
+      
+       $hour = date ('G');
+       $greeting = '';
+       if ($hour < 12 ) {
+         $greeting = 'Good morning @name!';
+       }
+       elseif ($hour < 18) {
+         $greeting = 'Good afternoon @name!';
+       }
+      else {
+       $greeting = 'Good evening @name!';
+      }
+     
+     // added the line of code below still no luck ?
+     //if(!empty($GLOBALS['user']->name) {
+       //$block['content'] = t($greeting , array('@name' => $GLOBALS['user']->name));
+  //}
+      
+      //break;
+      
+    case 'user_info':
+      
+      if (arg(0) == 'user' && is_numeric(arg(1))) {
+        $account = user_load(arg(1));
+      if (!empty($account)) {
+        $block['subject'] = t('User Info');
+        $output = '';
+        $output .= '<div><label>' . t('Name') . '</label>' . $account->name . '</div>';
+        $output .= '<div><label>' . t('Email') . '</label>' . $account->mail . '</div>';
+        $output .= '<div><label>' . t('Created') . '</label>' . format_date ($account->created) . '</div>';
+        $access = ($account->access == 0) ? t('Never') : format_date($account->access);
+        $output .= '<div><label>' . t('Last Access') . '</label>' . $access . '</div>';
+        $block['content'] = $output;
+      }
+      
+    }   
+      break;
+    } 
+    
+    return $block;
+    
+  }
+  
